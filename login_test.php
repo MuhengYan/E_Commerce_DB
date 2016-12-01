@@ -20,41 +20,41 @@
 
     <div class="container-fluid">
 
-	<div class="upper-row">
-		<div class="col-md-12">
-		</div>
-	</div>
+  <div class="upper-row">
+    <div class="col-md-12">
+    </div>
+  </div>
 
 
-	<div class="lower-row">
-		<div class="col-md-4">
-		</div>
+  <div class="lower-row">
+    <div class="col-md-4">
+    </div>
 
-		<div class="col-md-4">
-			<h2 class="text-center">
-				Login
-			</h2><br>
-
-
-			<form role="form" action="login_check_user.php" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
-				<div class="form-group">
-
-					<label for="InputUser">
-						Customer ID
-					</label>
-					<input type="email" class="form-control" id="InputUser" name="u-name">
-
-				</div>
+    <div class="col-md-4">
+      <h2 class="text-center">
+        Login
+      </h2><br>
 
 
-				<div class="form-group">
+      <form role="form" action="login_check_user.php" method="get" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+        <div class="form-group">
 
-					<label for="InputPassword">
-						Password
-					</label>
-					<input type="password" class="form-control" id="InputPassword" name="pass">
+          <label for="InputUser">
+            Customer ID
+          </label>
+          <input type="email" class="form-control" id="InputUser" name="u-name">
 
-				</div>
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="InputPassword">
+            Password
+          </label>
+          <input type="password" class="form-control" id="InputPassword" name="pass">
+
+        </div>
 
 
 
@@ -69,17 +69,17 @@
 
     </form>
 
-		</div>
+    </div>
 
 
-		<div class="col-md-4">
+    <div class="col-md-4">
       <a type="submit" class="btn btn-default" style="top:240px; left:50px; position:absolute;" role="button" href="main.html">
         Back to home
       </a>
 
-		</div>
+    </div>
 
-	</div>
+  </div>
 </div>
 
   <!-- <script type="text/javascript" src="yourPath/jquery-1.10.2.min.js"></script> -->
