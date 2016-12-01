@@ -13,8 +13,13 @@
 </html>
 
 <?php
+<<<<<<< HEAD
 
 require_once('user_login.php');
+=======
+session_start();
+require_once('include/user_login.php');
+>>>>>>> 1cd61bfd8a36e631923f134b91a8566f081efa93
 
 $email = trim($_GET["u-email"]);
 $password = trim($_GET["pass"]);
