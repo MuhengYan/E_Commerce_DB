@@ -43,7 +43,7 @@ CREATE TABLE `e_commerce`.`store` (
 
 CREATE TABLE `e_commerce`.`customers` (
   `cID` INT NOT NULL auto_increment,
-  `email` INT NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
   `PIN` INT NOT NULL,  
   `bcID` INT,
   `hcID` INT,
