@@ -47,7 +47,7 @@ CREATE TABLE `e_commerce`.`customers` (
   `PIN` INT NOT NULL,  
   `bcID` INT,
   `hcID` INT,
-  CONSTRAINT uc_email UNIQUE (email)
+  CONSTRAINT uc_email UNIQUE (email),
   PRIMARY KEY (`cID`),
   CONSTRAINT `b_cus`
     FOREIGN KEY (`bcID`)
@@ -110,8 +110,8 @@ INSERT INTO e_commerce.products(pName,Inventory,Price, StockStoreID) VALUES ('Co
 INSERT INTO e_commerce.salespersons(Name,Address,Email,Title,storeAssigned,salary) VALUES('JohnDoe','Oakland','jd@gmail.com','Salesman',2,1000.5);
 UPDATE e_commerce.store SET n_salesperson = n_salesperson + 1 WHERE storeID = 2;
 
-INSERT INTO e_commerce.h_customers(Name, Street, City, State, Zip, M_status, Gender, Age, Income) VALUES('Some Customer','Melwood Street','Pittsburgh', 'PA', '15207', 'Classified', 'Others', 30, 20000)
-INSERT INTO e_commerce.customers(PIN, email, hcID) VALUES(123,'John@123.com', 1）
+INSERT INTO e_commerce.h_customers(Name, Street, City, State, Zip, M_status, Gender, Age, Income) VALUES('Some Customer','Melwood Street','Pittsburgh', 'PA', '15207', 'Classified', 'Others', 30, 20000);
+INSERT INTO e_commerce.customers(PIN, email, hcID) VALUES(123,'John@123.com', 1);
 
 
 
