@@ -59,6 +59,7 @@ CREATE TABLE `e_commerce`.`customers` (
 CREATE TABLE `e_commerce`.`products` (
   `pID` INT NOT NULL auto_increment,
   `pName` VARCHAR(45) NOT NULL,
+  `Category` VARCHAR(45) NOT NULL,
   `Inventory` INT NOT NULL,
   `Price` DOUBLE NOT NULL,
   `StockStoreID` INT NOT NULL,
@@ -78,6 +79,7 @@ CREATE TABLE `e_commerce`.`salespersons` (
   `storeAssigned` INT NOT NULL,
   `salary` DOUBLE NOT NULL,
   PRIMARY KEY (`salespersonID`),
+  CONSTRAINT us_email UNIQUE (Email),
   CONSTRAINT `workAt`
     FOREIGN KEY (`storeAssigned`)
     REFERENCES `e_commerce`.`store` (`storeID`));
