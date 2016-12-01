@@ -36,7 +36,7 @@
 			</h2><br>
 
 
-			<form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+			<form role="form" action="login_check_user.php" method="get" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
 				<div class="form-group">
 
 					<label for="InputEmail">
@@ -57,7 +57,7 @@
 				</div><br>
 
 
-        <a type="submit" class="btn btn-default" role="button" href="customer.html">
+        <a type="submit" class="btn btn-success" role="button">
           Login
         </a>
 

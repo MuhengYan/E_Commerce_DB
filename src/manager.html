@@ -30,37 +30,41 @@
 
 
     <div class="row">
-		<div class="col-md-6" style="padding-left:100px; padding-right:100px;">
+
+
+
+		<div class="col-md-6" style="padding-left:100px; padding-right:100px;" onSubmit="return chkads()">
 
       <!-- <h4 class="text-center" style="color:grey;">
 				Please select one or more options below.
 			</h4><br> -->
 
+        <form role="form" action="" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
     				Search products
     			</h3><br>
 					<label for="InputPname">
-						Product ID
+						Product name
 					</label>
-					<input type="" class="form-control" id="InputPname" name="u-name">
+					<input type="" class="form-control" id="InputPname" name="p-name">
           <br>
           <button type="submit" class="btn btn-success">
             Search
-          </button><br>
+          </button>
+        </form>
+
+        <br><br>
 
 
+        <form role="form" action="" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
     				Add products
     			</h3><br>
-					<label for="InputPid">
-						Product ID
-					</label>
-					<input type="" class="form-control" id="InputPid" name="u-name">
 
           <label for="InputPname">
 						Product name
 					</label>
-					<input type="" class="form-control" id="InputPname" name="u-name">
+					<input type="" class="form-control" id="InputPname" name="p-name">
 
           <label for="pro_kind">Product kind</label>
           <select class="form-control" id="pro_kind">
@@ -72,50 +76,50 @@
           <label for="InputInv">
 						Inventory
 					</label>
-					<input type="" class="form-control" id="InputInv" name="u-name">
+					<input type="" class="form-control" id="InputInv" name="in-name">
 
-          <label for="InputPrice">
+          <label for="pro_pricee">
 						Price
 					</label>
-					<input type="" class="form-control" id="InputPrice" name="u-name">
+					<input class="form-control" id="pro_price" name="pro_price">
 
           <br>
-          <button type="submit" class="btn btn-success">
+          <button type="submit" class="btn btn-success" onSubmit="return check()">
             + Add
           </button>
+        </form>
 
 
       <br><br>
 
 
+      <form role="form" action="" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
+
       <h3 class="text-center" style="color:grey;">
         Update products
       </h3><br>
-      <label for="InputPid">
-        Product ID
-      </label>
-      <input type="" class="form-control" id="InputPid" name="u-name">
 
       <label for="InputPname">
         Product name
       </label>
-      <input type="" class="form-control" id="InputPname" name="u-name">
+      <input type="" class="form-control" id="InputPname" name="p-name">
 
       <label for="InputInv">
         Inventory
       </label>
-      <input type="" class="form-control" id="InputInv" name="u-name">
+      <input type="" class="form-control" id="InputInv" name="in-name">
 
-      <label for="InputPrice">
+      <label for="pro_price">
         Price
       </label>
-      <input type="" class="form-control" id="InputPrice" name="u-name">
+      <input class="form-control" id="pro_price" name="pro_price">
 
       <br>
-      <button type="submit" class="btn btn-success">
+      <button type="submit" class="btn btn-success" onSubmit="return check()">
         Update
       </button>
-
+    </form>
+    <br><br>
       <!-- <div class="row" style="left:33px; top:500px; position:absolute;" onSubmit="return chkads()">
       <button type="submit" class="btn btn-success">
         Search
@@ -126,39 +130,45 @@
 		</div>
 
 
-		<div class="col-md-6" style="padding-left:100px; padding-right:100px;">
 
 
+		<div class="col-md-6" style="padding-left:100px; padding-right:100px;" onSubmit="return chkads()">
+
+
+      <form role="form" action="" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
     				Search salesperson
     			</h3><br>
-					<label for="InputPname">
-						Salesperson ID
+					<label for="InputSname">
+						Salesperson name
 					</label>
-					<input type="" class="form-control" id="InputPname" name="u-name">
+					<input type="" class="form-control" id="InputSname" name="s-name">
           <br>
           <button type="submit" class="btn btn-success">
             Search
           </button>
+        </form>
 
+        <br><br>
 
+        <form role="form" action="" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
     				Add salesperson
     			</h3><br>
-					<label for="InputPid">
+					<label for="InputSname">
 						Name
 					</label>
-					<input type="" class="form-control" id="InputPid" name="u-name">
+					<input type="" class="form-control" id="InputSname" name="s-name">
 
-          <label for="InputInv">
+          <label for="InputAdd">
 						Address
 					</label>
-					<input type="address" class="form-control" id="InputInv" name="u-name">
+					<input type="address" class="form-control" id="InputAdd" name="s-add">
 
           <label for="InputPrice">
-						Email
+						E-mail
 					</label>
-					<input type="email" class="form-control" id="InputPrice" name="u-name">
+					<input type="email" class="form-control" id="InputPrice" name="s-email">
 
           <label for="title">Title</label>
           <select class="form-control" id="title">
@@ -172,15 +182,16 @@
             <option id="k8">51~100</option> <option id="k9">101~200</option> <option id="k10">201~500</option> <option id="k11"> > 500</option>
           </select>
 
-          <label for="InputPrice">
+          <label for="InputS_Price">
 						Salary
 					</label>
-					<input type="" class="form-control" id="InputPrice" name="u-name">
+					<input type="" class="form-control" id="InputS_Price" name="sales_price">
 
           <br>
-          <button type="submit" class="btn btn-success">
+          <button type="submit" class="btn btn-success" onSubmit="return check()">
             + Add
           </button>
+        </form>
 
       <br><br>
 
@@ -190,6 +201,8 @@
       </a>
 
 		</div>
+
+
     </div>
 
 
