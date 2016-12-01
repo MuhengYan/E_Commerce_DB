@@ -99,6 +99,9 @@ CREATE TABLE `e_commerce`.`transactions` (
   CONSTRAINT `sell`
     FOREIGN KEY (`salespersonID`)
     REFERENCES `e_commerce`.`salespersons` (`salespersonID`));
+    
+insert into e_commerce.region(rName, rManager) values('Great Pittsburgh', 'Homer');
+insert into e_commerce.region(rName, rManager) values('Middle Pennsylvania', 'Euclid');
 
 insert into e_commerce.store(Address, Manager, regionLocated, n_salesperson) values('Greenfield Ave', 'Plato', 1, 0);
 insert into e_commerce.store(Address, Manager, regionLocated, n_salesperson) values('Fifth Ave', 'Aristotle', 1, 0);
