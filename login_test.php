@@ -36,7 +36,7 @@
 			</h2><br>
 
 
-			<form role="form" action="login.php" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+			<form role="form" action="login_check_user.php" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
 				<div class="form-group">
 
 					<label for="InputUser">
