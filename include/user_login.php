@@ -15,11 +15,14 @@ function check_login_user($email, $PIN){
         echo "Error: Could not connect to database.  Please try again later.";
         exit;
      }
-     
+     $a = 1
      $query = "SELECT cID from customers
-         WHERE cID = '".$email."' and password = '".$PIN."'";
+         WHERE cID = '".$a."' and password = ".$a." ";
      $result = $db->query($query);
      
+
+     echo $query;
+
      $row = $result->fetch_assoc();
      $cID = intval($row['cID']);
      $db->close();
