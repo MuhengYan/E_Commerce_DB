@@ -18,16 +18,15 @@
   </head>
   <body>
 
-
     <div class="container-fluid">
 
-  	<div class="upper-row">
-  		<div class="col-md-12">
-        <h2 class="text-center">
-  				Customer Dashboard
-  			</h2><br>
-        
-        <?php
+  <div class="upper-row">
+    <div class="col-md-12">
+      <h2 class="text-center">
+        Customer Dashboard
+      </h2><br>
+
+      <?php
           session_start();
 
           // if(isset($_SESSION['uid'])){
@@ -44,37 +43,36 @@
           // echo $_SESSION['uid'];
         ?>
 
-  		</div>
-  	</div>
+    </div>
+  </div>
 
 
-	<div class="lower-row">
+  <div class="lower-row">
     <div class="col-md-4">
     </div>
 
 
     <div class="col-md-4">
 
-      <form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+      <form role="form" action="customer_search_product.php" method="get" onSubmit="return from_to()" id="lf_stu" name="lf_stu">
         <div class="form-group">
           <h3 class="text-center" style="color:grey;">
-            Search or buy product
+            Search products
           </h3><br>
           <label for="InputUser">
             Product Name
           </label>
-          <input type="" class="form-control" id="InputPname" name="u-name">
+          <input type="" class="form-control" id="InputPname" name="u-name" placeholder="leave blank to search all">
 
         </div>
 
 
         <div class="form-group">
 
-          <label for="kind">Product kind</label>
-          <select class="form-control" id="kind">
-            <option id="k0">ALL</option> <option id="k1">1~10</option> <option id="k2">11~30</option> <option id="k3">31~50</option>
-            <option id="k4">51~100</option> <option id="k5">101~200</option> <option id="k6">201~500</option> <option id="k7"> > 500</option>
-            <option id="k8">51~100</option> <option id="k9">101~200</option> <option id="k10">201~500</option> <option id="k11"> > 500</option>
+          <label for="kind">Product category</label>
+          <select class="form-control" id="kind" name="category">
+            <option id="k0">ALL</option> <option id="k1">Electric</option> <option id="k2">Book</option> <option id="k3">Cosmetics</option>
+            <option id="k4">Food</option> <option id="k5">Clothes</option> <option id="k0">Toy</option>
           </select>
 
         </div>
@@ -83,15 +81,11 @@
         <div class="form-group">
 
           <label for="inventory">Inventory</label>
-          <select class="form-control" id="inventory">
-            <option id="i0">ALL</option> <option id="i1">1~10</option> <option id="i2">11~30</option> <option id="i3">31~50</option>
-            <option id="i4">51~100</option> <option id="i5">101~200</option> <option id="i6">201~500</option> <option id="i7"> > 500</option>
-          </select>
-
+          <input type="number" min="0" max="" class="form-control" id="inventory" name="buy_inventory" placeholder="leave blank to search all">
         </div>
 
 
-        <div class="form-group">
+        <!-- <div class="form-group">
 
           <label for="price">Price ($)</label>
           <select class="form-control" id="price">
@@ -99,28 +93,75 @@
             <option id="p4">501~1000</option> <option id="p5">1001~2000</option> <option id="p6">2001~3000</option> <option id="p7"> > 3000</option>
           </select>
 
+        </div> -->
+
+
+        <div class="row">
+          <!-- <label for="price"></label> -->
+        <div class="form-group col-xs-4">
+          <label for="p_from">Price ($) From</label>
+          <input type="number" min="0" max="" class="form-control" id="p_from" name="p_from" placeholder="">
+        </div>
+
+        <div class="form-group col-xs-4">
+          <label for="p_to">To</label>
+          <input type="number" min="0" max="" class="form-control" id="p_to" name="p_to" placeholder="">
+        </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="price">Order by</label>
+          <select class="form-control" id="price" name="order">
+            <option id="o0">---</option> <option id="o1">Category</option> <option id="o2">Inventory: low to high</option> <option id="o3">Inventory: high to low</option>
+            <option id="o4">Price: low to high</option> <option id="o5">Price: high to low</option>
+          </select>
+
         </div>
 
       <br>
 
-      <div class="row" onSubmit="return chkads()">
+      <div class="row" onSubmit="return from_to()">
       <button type="submit" class="btn btn-success" style="margin-left:15px;">
         Search
       </button>
 
-      <button type="submit" class="btn btn-info" style="margin-left:20px;">
-        Buy
-      </button><br><br><br>
-
       </div>
 
+    </form>
 
+
+    <br>
+    <form role="form" action="customer_buy.php" method="get">
+
+    <h3 class="text-center" style="color:grey;">
+      Buy products
+    </h3><br>
+
+    <label for="pro_ID">
+      Product ID
+    </label>
+    <input type="" class="form-control" id="pro_ID" name="proID">
+
+    <label for="inventory">
+      Inventory
+    </label>
+    <input type="number" value="1" min="1" max="100" class="form-control" id="inventory" name="buy_inventory">
+
+    <br>
+
+    <button type="submit" class="btn btn-success" style="margin-left:px;">
+      Buy
+    </button>
 
     </form>
 
 
 
-    <form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+    <br><br>
+    <form role="form" action="customer_search_trans.php" method="get">
 
     <h3 class="text-center" style="color:grey;">
       Search transaction history
@@ -134,7 +175,7 @@
 
     <div class="form-group">
       <label for="transdate">Date</label>
-      <select class="form-control" id="transdate">
+      <select class="form-control" id="transdate" name="date">
         <option id="t0">ALL</option> <option id="t1">In 7 days</option> <option id="t2">In 14 days</option>
       </select>
     </div>
@@ -142,7 +183,7 @@
 
     <button type="submit" class="btn btn-success" style="margin-left:px;">
       Search
-    </button>
+    </button><br><br><br><br>
 
     </form>
 
@@ -150,7 +191,7 @@
 
 
     <div class="col-md-4">
-      <a type="submit" class="btn btn-default" style="top:700px; left:50px; position:absolute;" role="button" href="main.html">
+      <a type="submit" class="btn btn-default" style="top:980px; left:50px; position:absolute;" role="button" href="main.html">
         Back to home
       </a><br><br>
 
@@ -160,7 +201,6 @@
   </div>
 </div>
 
-
   <!-- <script type="text/javascript" src="yourPath/jquery-1.10.2.min.js"></script> -->
   <!-- <script type="text/javascript" src="js/bootstrap-select.js"></script> -->
 
@@ -168,6 +208,19 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
 
-  </body>
+     <script>
+    function from_to()
+    {
+      if (lf_stu.p_from.value > lf_stu.p_to.value)
+      {
+      alert("From value cannot exceed To value!");
+      // lf_stu.p_from.select();
+      return false;
+      }
+    }
 
+    </script>
+
+
+  </body>
 </html>
