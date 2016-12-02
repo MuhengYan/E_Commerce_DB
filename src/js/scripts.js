@@ -110,7 +110,33 @@
     }
 
 
+    if(!IsNum(lf_addstu.buy_inventory.value)){
+    alert("Please type NUMBER on Inventory!")
+    lf_addstu.buy_inventory.focus();
+    return false;
+    }
+
    }
+
+
+
+function check(){
+
+  if(!IsNum(lf_addstu2.pro_price.value)){
+  alert("Please type NUMBER on product price!")
+  lf_addstu2.pro_price.focus();
+  return false;
+  }
+
+  if(!IsNum(lf_addstu2.sales_price.value)){
+  alert("Please type NUMBER on salary!")
+  lf_addstu2.sales_price.focus();
+  return false;
+  }
+
+
+}
+
 
 
    function IsNum(num){

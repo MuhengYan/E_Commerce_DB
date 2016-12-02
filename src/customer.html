@@ -39,7 +39,7 @@
 			<form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
 				<div class="form-group">
           <h3 class="text-center" style="color:grey;">
-            Search or buy product
+            Search products
           </h3><br>
 					<label for="InputUser">
 						Product Name
@@ -53,9 +53,8 @@
 
           <label for="kind">Product kind</label>
           <select class="form-control" id="kind">
-            <option id="k0">ALL</option> <option id="k1">1~10</option> <option id="k2">11~30</option> <option id="k3">31~50</option>
-            <option id="k4">51~100</option> <option id="k5">101~200</option> <option id="k6">201~500</option> <option id="k7"> > 500</option>
-            <option id="k8">51~100</option> <option id="k9">101~200</option> <option id="k10">201~500</option> <option id="k11"> > 500</option>
+            <option id="k0">Electric</option> <option id="k1">Toy</option> <option id="k2">Book</option> <option id="k3">Cosmetics</option>
+            <option id="k4">Food</option> <option id="k5">Clothes</option>
           </select>
 
 				</div>
@@ -89,18 +88,39 @@
         Search
       </button>
 
-      <button type="submit" class="btn btn-info" style="margin-left:20px;">
-        Buy
-      </button><br><br><br>
-
       </div>
 
+    </form>
 
+
+    <br>
+    <form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+
+    <h3 class="text-center" style="color:grey;">
+      Buy products
+    </h3><br>
+
+    <label for="pro_ID">
+      Product ID
+    </label>
+    <input type="" class="form-control" id="pro_ID" name="proID">
+
+    <label for="inventory">
+      Inventory
+    </label>
+    <input type="number" value="1" min="1" max="100" class="form-control" id="inventory" name="buy_inventory">
+
+    <br>
+
+    <button type="submit" class="btn btn-success" style="margin-left:px;">
+      Buy
+    </button>
 
     </form>
 
 
 
+    <br><br>
     <form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
 
     <h3 class="text-center" style="color:grey;">
@@ -123,7 +143,7 @@
 
     <button type="submit" class="btn btn-success" style="margin-left:px;">
       Search
-    </button>
+    </button><br><br><br><br>
 
     </form>
 
@@ -131,7 +151,7 @@
 
 
     <div class="col-md-4">
-      <a type="submit" class="btn btn-default" style="top:700px; left:50px; position:absolute;" role="button" href="main.html">
+      <a type="submit" class="btn btn-default" style="top:980px; left:50px; position:absolute;" role="button" href="main.html">
         Back to home
       </a><br><br>
 
