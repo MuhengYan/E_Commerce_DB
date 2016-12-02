@@ -36,11 +36,13 @@
 
 		<div class="col-md-4">
 
-			<form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+			<form role="form" action="" method="get" onSubmit="return from_to()" id="lf_stu" name="lf_stu">
+
 				<div class="form-group">
           <h3 class="text-center" style="color:grey;">
             Search products
           </h3><br>
+
 					<label for="InputUser">
 						Product Name
 					</label>
@@ -105,7 +107,7 @@
 
       <br>
 
-      <div class="row" onSubmit="return chkads()">
+      <div class="row" onSubmit="return from_to()">
       <button type="submit" class="btn btn-success" style="margin-left:15px;">
         Search
       </button>
@@ -116,34 +118,34 @@
 
 
     <br>
-    <form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+    <form role="form" action="" method="get">
 
-    <h3 class="text-center" style="color:grey;">
-      Buy products
-    </h3><br>
+      <h3 class="text-center" style="color:grey;">
+        Buy products
+      </h3><br>
 
-    <label for="pro_ID">
-      Product ID
-    </label>
-    <input type="" class="form-control" id="pro_ID" name="proID">
+      <label for="pro_ID">
+        Product ID
+      </label>
+      <input type="" class="form-control" id="pro_ID" name="proID">
 
-    <label for="inventory">
-      Inventory
-    </label>
-    <input type="number" value="1" min="1" max="100" class="form-control" id="inventory" name="buy_inventory">
+      <label for="inventory">
+        Inventory
+      </label>
+      <input type="number" value="1" min="1" max="100" class="form-control" id="inventory" name="buy_inventory">
 
-    <br>
+      <br>
 
-    <button type="submit" class="btn btn-success" style="margin-left:px;">
-      Buy
-    </button>
+      <button type="submit" class="btn btn-success" style="margin-left:px;">
+        Buy
+      </button>
 
     </form>
 
 
 
     <br><br>
-    <form role="form" action="" method="post" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
+    <form role="form" action="" method="get">
 
     <h3 class="text-center" style="color:grey;">
       Search transaction history
@@ -189,6 +191,19 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+
+    <script>
+    function from_to()
+    {
+      if (lf_stu.p_from.value > lf_stu.p_to.value)
+      {
+      alert("From value cannot exceed To value!");
+      // lf_stu.p_from.select();
+      return false;
+      }
+    }
+
+    </script>
 
 
   </body>
