@@ -8,7 +8,7 @@ CREATE TABLE `e_commerce`.`b_customers` (
   `State` VARCHAR(45) NOT NULL,
   `Zip` VARCHAR(45) NOT NULL,
   `Category` VARCHAR(45) NOT NULL,
-  `Gross` VARCHAR(45) NOT NULL,
+  `Gross` DOUBLE NOT NULL,
   PRIMARY KEY (`ID`));
 
 CREATE TABLE `e_commerce`.`h_customers` (
@@ -21,7 +21,7 @@ CREATE TABLE `e_commerce`.`h_customers` (
   `M_status` VARCHAR(45) NOT NULL,
   `Gender` VARCHAR(45) NOT NULL,
   `Age` INT NOT NULL,
-  `Income` INT NOT NULL,
+  `Income` DOUBLE NOT NULL,
   PRIMARY KEY (`ID`));
 
 CREATE TABLE `e_commerce`.`region` (
@@ -39,7 +39,9 @@ CREATE TABLE `e_commerce`.`store` (
   PRIMARY KEY (`storeID`),
   CONSTRAINT `locate`
     FOREIGN KEY (`regionLocated`)
-    REFERENCES `e_commerce`.`region` (`rID`));
+    REFERENCES `e_commerce`.`region` (`rID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 CREATE TABLE `e_commerce`.`customers` (
   `cID` INT NOT NULL auto_increment,
@@ -51,10 +53,14 @@ CREATE TABLE `e_commerce`.`customers` (
   PRIMARY KEY (`cID`),
   CONSTRAINT `b_cus`
     FOREIGN KEY (`bcID`)
-    REFERENCES `e_commerce`.`b_customers` (`ID`),
+    REFERENCES `e_commerce`.`b_customers` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `h_cus`
     FOREIGN KEY (`hcID`)
-    REFERENCES `e_commerce`.`h_customers` (`ID`));
+    REFERENCES `e_commerce`.`h_customers` (`ID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 CREATE TABLE `e_commerce`.`products` (
   `pID` INT NOT NULL auto_increment,
@@ -67,7 +73,9 @@ CREATE TABLE `e_commerce`.`products` (
   UNIQUE KEY (`pName`, `StockStoreID`),
   CONSTRAINT `stockIn`
     FOREIGN KEY (`StockStoreID`)
-    REFERENCES `e_commerce`.`store` (`storeID`));
+    REFERENCES `e_commerce`.`store` (`storeID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 
 CREATE TABLE `e_commerce`.`salespersons` (
@@ -82,7 +90,9 @@ CREATE TABLE `e_commerce`.`salespersons` (
   CONSTRAINT us_email UNIQUE (Email),
   CONSTRAINT `workAt`
     FOREIGN KEY (`storeAssigned`)
-    REFERENCES `e_commerce`.`store` (`storeID`));
+    REFERENCES `e_commerce`.`store` (`storeID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 CREATE TABLE `e_commerce`.`transactions` (
   `tID` INT NOT NULL auto_increment,
@@ -95,13 +105,19 @@ CREATE TABLE `e_commerce`.`transactions` (
   PRIMARY KEY (`tID`),
   CONSTRAINT `productInfo`
     FOREIGN KEY (`productID`)
-    REFERENCES `e_commerce`.`products` (`pID`),
+    REFERENCES `e_commerce`.`products` (`pID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `buy`
     FOREIGN KEY (`customerID`)
-    REFERENCES `e_commerce`.`customers` (`cID`),
+    REFERENCES `e_commerce`.`customers` (`cID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `sell`
     FOREIGN KEY (`salespersonID`)
-    REFERENCES `e_commerce`.`salespersons` (`salespersonID`));
+    REFERENCES `e_commerce`.`salespersons` (`salespersonID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
     
 insert into e_commerce.region(rName, rManager) values('Great Pittsburgh', 'Homer');
 insert into e_commerce.region(rName, rManager) values('Middle Pennsylvania', 'Euclid');
