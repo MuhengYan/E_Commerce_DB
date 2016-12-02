@@ -86,7 +86,7 @@ CREATE TABLE `e_commerce`.`salespersons` (
 
 CREATE TABLE `e_commerce`.`transactions` (
   `tID` INT NOT NULL auto_increment,
-  `Date` VARCHAR(45) NOT NULL,
+  `Date` DATE NOT NULL,
   `productID` INT NOT NULL,
   `customerID` INT NOT NULL,
   `salespersonID` INT NOT NULL,
@@ -109,7 +109,7 @@ insert into e_commerce.store(Address, Manager, regionLocated, n_salesperson) val
 insert into e_commerce.store(Address, Manager, regionLocated, n_salesperson) values('Fifth Ave', 'Aristotle', 1, 0);
 insert into e_commerce.store(Address, Manager, regionLocated, n_salesperson) values('State College', 'Socrates', 2, 0);
 
-INSERT INTO e_commerce.products(pName,Inventory,Price, StockStoreID) VALUES ('Computer',2,3,1) 
+INSERT INTO e_commerce.products(pName, Category, Inventory,Price, StockStoreID) VALUES ('Computer','comput',2,3,1) 
   ON DUPLICATE KEY UPDATE Inventory=(Inventory + 2) ;
 
 INSERT INTO e_commerce.salespersons(Name,Address,Email,Title,storeAssigned,salary) VALUES('JohnDoe','Oakland','jd@gmail.com','Salesman',2,1000.5);
