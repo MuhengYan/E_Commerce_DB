@@ -34,13 +34,13 @@
           // }
 
           // echo "hello";
-          
+
           $uid = $_SESSION['sid'];
           // echo $uid;
 
-          
 
-          echo "<div style=\"text-align:center\"><p><h3>Welcome Manager for Store ". $_SESSION['sid']."!</h3></p></div>";
+
+          echo "<div style=\"text-align:center\"><p><h3>Welcome Manager to Store ". $_SESSION['sid']."!</h3></p></div>";
 
           // echo $_SESSION['uid'];
         ?>
@@ -89,18 +89,18 @@
           <label for="pro_kind">Product category</label>
           <select class="form-control" id="pro_kind" name="kind">
             <option id="k1">Electric</option> <option id="k2">Toy</option> <option id="k3">Book</option>
-            <option id="k4">Cosmetics</option> <option id="k5">Food</option> <option id="k6">Clothes</option> 
+            <option id="k4">Cosmetics</option> <option id="k5">Food</option> <option id="k6">Clothes</option>
           </select>
 
           <label for="InputInv">
 						Inventory
 					</label>
-					<input type="" class="form-control" id="InputInv" name="in_name">
+          <input type="number" value="1" min="1" max="" class="form-control" id="InputInv" name="in_name" placeholder="">
 
           <label for="pro_pricee">
 						Price
 					</label>
-					<input class="form-control" id="pro_price" name="pro_price">
+          <input type="number" value="0" min="0" max="" class="form-control" id="pro_price" name="pro_price" placeholder="">
 
           <br>
           <button type="submit" class="btn btn-success" onSubmit="return check()">
@@ -126,7 +126,7 @@
       <label for="pro_price">
         Price
       </label>
-      <input class="form-control" id="pro_price" name="pro_price">
+      <input type="number" value="0" min="0" max="" class="form-control" id="pro_price" name="pro_price" placeholder="">
 
       <br>
       <button type="submit" class="btn btn-success">
@@ -199,7 +199,7 @@
           <label for="InputS_Price">
 						Salary
 					</label>
-					<input type="" class="form-control" id="InputS_Price" name="s_salary">
+          <input type="number" value="0" min="0" max="" class="form-control" id="InputS_Price" name="s_salary" placeholder="">
 
           <br>
           <button type="submit" class="btn btn-success">
@@ -210,7 +210,11 @@
       <br><br>
 
 
-      <a type="submit" class="btn btn-default" style="top:800px; left:100px; position:absolute;" role="button" href="main.php">
+      <a type="submit" class="btn btn-success" style="top:800px; left:100px; position:absolute;" role="button" href="manager_agg.php">
+        Aggregation page
+      </a>
+
+      <a type="submit" class="btn btn-default" style="top:850px; left:100px; position:absolute;" role="button" href="main.php">
         Back to home
       </a>
 
