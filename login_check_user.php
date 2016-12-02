@@ -1,11 +1,11 @@
 <html>
 <head>
-  <title>Manager Login</title>
+  <title>User Login</title>
           	<style type="text/css">
-	body
-	{
-		padding-top:10px;
-		padding-left:40px;
+	body 
+	{ 
+		padding-top:10px; 
+		padding-left:40px; 
 		padding-right:40px;
 	}
 	</style>
@@ -13,19 +13,14 @@
 </html>
 
 <?php
-<<<<<<< HEAD
-
-require_once('user_login.php');
-=======
 session_start();
 require_once('include/user_login.php');
->>>>>>> 1cd61bfd8a36e631923f134b91a8566f081efa93
 
-$email = trim($_GET["u-email"]);
+$email = trim($_GET["u-name"]);
 $password = trim($_GET["pass"]);
 
-echo $email;
-echo $password;
+// echo $email;
+// echo $password;
 
 
 // $email = 'John@123.com';
@@ -37,19 +32,27 @@ $uid = -1;
 // echo $uid;
 
 $uid = check_login_user($email, $password);
-echo $uid;
+// echo $uid;
 
+// $a = 1
+// $query = "SELECT cID from customers
+//          WHERE cID = '".$a."' and PIN = ".$a." ";
+
+// echo $query;
 if ($uid > 0){
     echo "<center><h1>login successfully!</h1></center>";
+    // echo $uid;
 
     $_SESSION['uid']= $uid;
-    echo "<center><a href=\"customer.php\">Manager Home Page</a></center>";
+     echo "sessionUID",$_SESSION['uid'];
 
+    echo "<center><a href=\"customer.php\">Customer Home Page</a></center>";
 }else {
     echo "<center><h1> Email and password do not match. Please try again.</h1></center>";
-    // echo "<center><a href=\"manager_login.php\">Manager Login Page</a></center>";
-
+    echo "<center><a href=\"login_test.php\">Login Page</a></center>";
+    
 }
 
 
 ?>
+

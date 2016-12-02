@@ -26,6 +26,7 @@ function check_login_user($email, $PIN){
 }       
 
 function check_login_manager($storeID, $name){
+     // echo $name;
      if (!get_magic_quotes_gpc()) {
         $storeID = addslashes($storeID);
         $name = addslashes($name);
@@ -38,9 +39,12 @@ function check_login_manager($storeID, $name){
         exit;
      }
      
+
      $query = "SELECT storeID FROM store
-         WHERE storeID = '".$storeID."' AND Manager = '".$name."'";
+         WHERE storeID = ".$storeID." AND Manager = '".$name."' ";
      $result = $db->query($query);
+
+     // echo $query;
      
      $row = $result->fetch_assoc();
      $storeID = intval($row['storeID']);
@@ -63,7 +67,8 @@ function search_salesperson($storeID, $searchTerm){
         exit;
     }
     
-    $query = "SELECT * FROM salespersons WHERE storeAssigned = '".$stordID."' AND Name LIKE '%".$searchTerm."%' ";
+    $query = "SELECT * FROM salespersons WHERE storeAssigned = ".$storeID." AND Name LIKE '%".$searchTerm."%' ";
+    // echo $query;
     $result = $db->query($query);
     $num_results = $result->num_rows;
     if ($num_results==0) {
@@ -102,6 +107,8 @@ function search_salesperson($storeID, $searchTerm){
 }
 
 function search_product_manager($storeID, $searchTerm){
+    
+
     if (!get_magic_quotes_gpc()) {
         $storeID = addslashes($storeID);
         $searchTerm = addslashes($searchTerm);
@@ -113,8 +120,13 @@ function search_product_manager($storeID, $searchTerm){
         echo "Error: Could not connect to database.  Please try again later.";
         exit;
     }
+
     
-    $query = "SELECT * FROM products WHERE StockStoreID = '".$stordID."' AND pName LIKE '%".$searchTerm."%' ";
+    $query = "SELECT * FROM products WHERE StockStoreID = ".$storeID." AND pName LIKE '%".$searchTerm."%' ";
+
+    // echo $searchTerm;
+    // echo $storeID;
+    // echo $query;
     $result = $db->query($query);
     $num_results = $result->num_rows;
     if ($num_results==0) {
@@ -187,14 +199,17 @@ function update_price($storeID, $productName, $price){
         echo "Error: Could not connect to database.  Please try again later.";
         exit;
     }
-    $query0 = "SELECT * FROM products WHERE StockStoreID = '".$stordID."' AND pName = '".$productName."' ";
+
+    $query0 = "SELECT * FROM products WHERE StockStoreID = ".$storeID." AND pName = '".$productName."' ";
+    
     $result0 = $db->query($query0);
     $num_results = $result0->num_rows;
     if ($num_results==0) {
-	echo "No such product found!";
+	   echo "No such product found!";
     } else {
-	$query = "UPDATE products SET Price = ".$price." WHERE StockStoreID = ".$storeID." AND pName = '".$productName."'; ";
-	$result = $db->query($query);
+	   $query = "UPDATE products SET Price = ".$price." WHERE StockStoreID = ".$storeID." AND pName = '".$productName."'; ";
+	   $result = $db->query($query);
+
     }    
     $result->free(); 
     $db->close();
@@ -217,17 +232,38 @@ function add_salesperson($storeID, $Name, $Address, $Email, $Title, $salary){
         exit;
     }
     $query0 = "SELECT * FROM salespersons WHERE Email = '".$Email."' ";
+
+    // echo "<br>";
+    // echo $query0;
+
     $result0 = $db->query($query0);
     $num_results = $result0->num_rows;
+
+    // echo $num_results;
+
     if ($num_results>0) {
-	echo "Email exists!";
+	   echo "Email exists!";
+           echo "<center><a href=\"manager.php\"> Manager Search Page</a></center>";
     } else {
-	$query = "INSERT INTO e_commerce.salespersons(Name,Address,Email,Title,storeAssigned,salary) 
-			VALUES ('".$Name."','".$Address."','".$Email."','".$Title."',".$storeID.",".$salary.");
-		UPDATE e_commerce.store SET n_salesperson = n_salesperson + 1 WHERE storeID = ".$storeID."; ";
-	$result = $db->query($query);
+	   $query1 = "INSERT INTO salespersons(Name,Address,Email,Title,storeAssigned,salary) 
+			VALUES ('".$Name."','".$Address."','".$Email."','".$Title."',".$storeID.",".$salary.");";
+
+	   $query2 = "UPDATE e_commerce.store SET n_salesperson = n_salesperson + 1 WHERE storeID = ".$storeID.";";
+    
+    // echo "<br>";
+    // echo $query1; 
+    // echo "<br>";
+    // echo $query2; 
+
+    	$result1 = $db->query($query1);
+        $result2 = $db->query($query2);
+        
+        echo "<center> <h1>Add successfully! </h1></center>";
+        echo "<center><a href=\"manager.php\"> Manager Search Page</a></center>";
+
     }    
-    $result->free(); 
+    $result1->free(); 
+    $result2->free(); 
     $db->close();
 }
 
