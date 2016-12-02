@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Manager browsing</title>
+    <title>Manager aggregation browsing</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -23,7 +23,7 @@
     <div class="row">
 		  <div class="col-md-12">
         <h2 class="text-center">
-  				Manager Dashboard
+  				Manager Aggregation
   			</h2>
 
            <?php
@@ -61,12 +61,43 @@
 
         <form role="form" action="mgr_search_product.php" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
-    				Search products
+    				General aggregation
     			</h3><br>
-					<label for="InputPname">
-						Product name
-					</label>
-					<input type="" class="form-control" id="InputPname" name="p-name">
+
+          <label for="cus_kind">Customer category</label>
+          <select class="form-control" id="cus_kind" name="cus_kind">
+            <option id="k1">ALL</option> <option id="k2">Home</option> <option id="k3">Business</option>
+          </select>
+
+          <label for="time">Time range</label>
+          <select class="form-control" id="time" name="time">
+            <option id="k1">ALL</option> <option id="k2">Last 7 days</option> <option id="k3">Last 14 Days</option>
+            <option id="k4">Last 30 days</option>
+          </select>
+
+          <label for="amount">Amount</label>
+          <select class="form-control" id="amount" name="amount">
+            <option id="k1">ALL</option> <option id="k2">Top 5</option> <option id="k3">Top 10</option>
+          </select>
+
+          <label for="order_by">Order by</label>
+          <select class="form-control" id="order_by" name="order_by">
+            <option id="k1">Total</option> <option id="k2">Profit</option> <option id="k3">Quantity</option>
+          </select>
+
+          <label for="agg_by">Aggregation by</label>
+          <select class="form-control" id="agg_by" name="agg_by">
+            <option id="k1">Category</option> <option id="k2">Customer</option> <option id="k3">Store</option>
+            <option id="k4">Region</option> <option id="k5">Product</option>
+          </select>
+
+
+          <!-- <label for="pro_kind">Product category</label>
+          <select class="form-control" id="pro_kind" name="pro_kind">
+            <option id="k1">Electric</option> <option id="k2">Toy</option> <option id="k3">Book</option>
+            <option id="k4">Cosmetics</option> <option id="k5">Food</option> <option id="k6">Clothes</option>
+          </select> -->
+
           <br>
           <button type="submit" class="btn btn-success">
             Search
@@ -76,70 +107,9 @@
         <br><br>
 
 
-        <form role="form" action="mgr_add_product.php" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
-          <h3 class="text-center" style="color:grey;">
-    				Add products
-    			</h3><br>
-
-          <label for="InputPname">
-						Product name
-					</label>
-					<input type="" class="form-control" id="InputPname" name="pname">
-
-          <label for="pro_kind">Product category</label>
-          <select class="form-control" id="pro_kind" name="kind">
-            <option id="k1">Electric</option> <option id="k2">Toy</option> <option id="k3">Book</option>
-            <option id="k4">Cosmetics</option> <option id="k5">Food</option> <option id="k6">Clothes</option>
-          </select>
-
-          <label for="InputInv">
-						Inventory
-					</label>
-          <input type="number" value="1" min="1" max="" class="form-control" id="InputInv" name="in_name" placeholder="">
-
-          <label for="pro_pricee">
-						Price
-					</label>
-          <input type="number" value="0" min="0" max="" class="form-control" id="pro_price" name="pro_price" placeholder="">
-
-          <br>
-          <button type="submit" class="btn btn-success" onSubmit="return check()">
-            + Add
-          </button>
-        </form>
-
 
       <br><br>
 
-
-      <form role="form" action="mgr_update_product.php" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
-
-      <h3 class="text-center" style="color:grey;">
-        Update products
-      </h3><br>
-
-      <label for="InputPname">
-        Product name
-      </label>
-      <input type="" class="form-control" id="InputPname" name="p-name">
-
-      <label for="pro_price">
-        Price
-      </label>
-      <input type="number" value="0" min="0" max="" class="form-control" id="pro_price" name="pro_price" placeholder="">
-
-      <br>
-      <button type="submit" class="btn btn-success">
-        Update
-      </button>
-    </form>
-    <br><br>
-      <!-- <div class="row" style="left:33px; top:500px; position:absolute;" onSubmit="return chkads()">
-      <button type="submit" class="btn btn-success">
-        Search
-      </button>
-
-      </div> -->
 
 		</div>
 
@@ -151,12 +121,29 @@
 
       <form role="form" action="mgr_search_salesperson.php" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
-    				Search salesperson
+    				Aggregate customer by product
     			</h3><br>
-					<label for="InputSname">
-						Salesperson name
+          <label for="InputPname">
+						Product name
 					</label>
-					<input type="" class="form-control" id="InputSname" name="s-name">
+					<input type="" class="form-control" id="InputPname" name="pro_name">
+
+          <label for="cus_kind">Customer category</label>
+          <select class="form-control" id="cus_kind" name="cus_kind">
+            <option id="k1">ALL</option> <option id="k2">Home</option> <option id="k3">Business</option>
+          </select>
+
+          <label for="time">Time range</label>
+          <select class="form-control" id="time" name="time">
+            <option id="k1">ALL</option> <option id="k2">Last 7 days</option> <option id="k3">Last 14 Days</option>
+            <option id="k4">Last 30 days</option>
+          </select>
+
+          <label for="order_by">Order by</label>
+          <select class="form-control" id="order_by" name="order_by">
+            <option id="k1">Total</option> <option id="k2">Profit</option> <option id="k3">Quantity</option>
+          </select>
+
           <br>
           <button type="submit" class="btn btn-success">
             Search
@@ -165,7 +152,7 @@
 
         <br><br>
 
-        <form role="form" action="mgr_add_salesperson.php" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
+        <!-- <form role="form" action="mgr_add_salesperson.php" method="get" onSubmit="return check()" id="lf_addstu2" name="lf_addstu2">
           <h3 class="text-center" style="color:grey;">
     				Add salesperson
     			</h3><br>
@@ -205,18 +192,14 @@
           <button type="submit" class="btn btn-success">
             + Add
           </button>
-        </form>
+        </form> -->
 
       <br><br>
 
 
-      <a type="submit" class="btn btn-success" style="top:800px; left:100px; position:absolute;" role="button" href="manager_agg.php">
-        Aggregation page
-      </a>
-
-      <a type="submit" class="btn btn-default" style="top:850px; left:100px; position:absolute;" role="button" href="main.php">
+      <a type="submit" class="btn btn-default" style="top:500px; left:100px; position:absolute;" role="button" href="main.php">
         Back to home
-      </a>
+      </a><br><br>
 
 		</div>
 
