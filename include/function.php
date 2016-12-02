@@ -124,9 +124,6 @@ function search_product_manager($storeID, $searchTerm){
     
     $query = "SELECT * FROM products WHERE StockStoreID = ".$storeID." AND pName LIKE '%".$searchTerm."%' ";
 
-    // echo $searchTerm;
-    // echo $storeID;
-    // echo $query;
     $result = $db->query($query);
     $num_results = $result->num_rows;
     if ($num_results==0) {
@@ -249,11 +246,7 @@ function add_salesperson($storeID, $Name, $Address, $Email, $Title, $salary){
 			VALUES ('".$Name."','".$Address."','".$Email."','".$Title."',".$storeID.",".$salary.");";
 
 	   $query2 = "UPDATE e_commerce.store SET n_salesperson = n_salesperson + 1 WHERE storeID = ".$storeID.";";
-    
-    // echo "<br>";
-    // echo $query1; 
-    // echo "<br>";
-    // echo $query2; 
+
 
     	$result1 = $db->query($query1);
         $result2 = $db->query($query2);
