@@ -38,10 +38,7 @@
       <h3 class="text-center" style="color:grey;">
         -- Customer --
       </h3>
-      <!-- <h4 class="text-center" style="color:grey;">
-        Please login or create your account.
-      </h4> -->
-      <br>
+
 
       <div class="row" style="margin-top:20px;">
       <a type="submit" class="btn btn-primary btn-lg btn-block" href="sign_up.html" role="button">
@@ -53,17 +50,27 @@
       <a type="submit" class="btn btn-info btn-lg btn-block" href="login_test.php" role="button">
         Login
       </a>
+    </div><br><br>
+
+
+
+      <h3 class="text-center" style="color:grey;">
+        -- Administrator --
+      </h3>
+
+
+      <div class="row" style="margin-top:20px;">
+      <a type="submit" class="btn btn-default btn-lg btn-block" href="admin.html" role="button">
+        Go to Admin
+      </a>
       </div>
+
 
       <br><br><br>
       <h3 class="text-center" style="color:grey;">
         -- Manager --
       </h3>
-      <!-- <h4 class="text-center" style="color:grey;">
-        Please login to your account.
-      </h4> -->
       <br>
-
 
       <form role="form" action="login_check_mgr.php" method="get" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
 
@@ -82,11 +89,11 @@
       </div>
 
       <div class="row" style="margin-top:20px;">
-       <button type="submit" class="btn btn-success">
+       <a type="submit" class="btn btn-success btn-lg btn-block" href="manager.php" role="button">
         Login
-      </button>
+      </a><br><br><br><br>
       </div>
-      
+
     </form>
 
 

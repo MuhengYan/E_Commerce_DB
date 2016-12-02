@@ -44,17 +44,17 @@
 					<label for="InputUser">
 						Product Name
 					</label>
-					<input type="" class="form-control" id="InputPname" name="u-name">
+					<input type="" class="form-control" id="InputPname" name="u-name" placeholder="leave blank to search all">
 
 				</div>
 
 
 				<div class="form-group">
 
-          <label for="kind">Product kind</label>
+          <label for="kind">Product category</label>
           <select class="form-control" id="kind">
-            <option id="k0">Electric</option> <option id="k1">Toy</option> <option id="k2">Book</option> <option id="k3">Cosmetics</option>
-            <option id="k4">Food</option> <option id="k5">Clothes</option>
+            <option id="k0">ALL</option> <option id="k1">Electric</option> <option id="k2">Book</option> <option id="k3">Cosmetics</option>
+            <option id="k4">Food</option> <option id="k5">Clothes</option> <option id="k0">Toy</option>
           </select>
 
 				</div>
@@ -63,11 +63,7 @@
         <div class="form-group">
 
           <label for="inventory">Inventory</label>
-          <select class="form-control" id="inventory">
-            <option id="i0">ALL</option> <option id="i1">1~10</option> <option id="i2">11~30</option> <option id="i3">31~50</option>
-            <option id="i4">51~100</option> <option id="i5">101~200</option> <option id="i6">201~500</option> <option id="i7"> > 500</option>
-          </select>
-
+          <input type="number" min="" max="" class="form-control" id="inventory" name="buy_inventory" placeholder="leave blank to search all">
 				</div>
 
 
@@ -77,6 +73,17 @@
           <select class="form-control" id="price">
             <option id="p0">ALL</option> <option id="p1">1~50</option> <option id="p2">51~100</option> <option id="p3">101~500</option>
             <option id="p4">501~1000</option> <option id="p5">1001~2000</option> <option id="p6">2001~3000</option> <option id="p7"> > 3000</option>
+          </select>
+
+				</div>
+
+
+        <div class="form-group">
+
+          <label for="price">Order by</label>
+          <select class="form-control" id="price">
+            <option id="o0">---</option> <option id="o1">Category</option> <option id="o2">Inventory: low to high</option> <option id="o3">Inventory: high to low</option>
+            <option id="o4">Price: low to high</option> <option id="o5">Price: high to low</option>
           </select>
 
 				</div>
