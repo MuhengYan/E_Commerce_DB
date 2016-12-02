@@ -91,6 +91,7 @@ CREATE TABLE `e_commerce`.`transactions` (
   `customerID` INT NOT NULL,
   `salespersonID` INT NOT NULL,
   `Quantity` INT NOT NULL,
+  `DealPrice` DOUBLE NOT NULL,
   PRIMARY KEY (`tID`),
   CONSTRAINT `productInfo`
     FOREIGN KEY (`productID`)
