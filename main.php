@@ -41,7 +41,7 @@
 
 
       <div class="row" style="margin-top:20px;">
-      <a type="submit" class="btn btn-primary btn-lg btn-block" href="sign_up.html" role="button">
+      <a type="submit" class="btn btn-primary btn-lg btn-block" href="sign_up.php" role="button">
         Sign up
       </a>
       </div>
@@ -60,7 +60,7 @@
 
 
       <div class="row" style="margin-top:20px;">
-      <a type="submit" class="btn btn-default btn-lg btn-block" href="admin.html" role="button">
+      <a type="submit" class="btn btn-default btn-lg btn-block" href="admin.php" role="button">
         Go to Admin
       </a>
       </div>
@@ -89,9 +89,9 @@
       </div>
 
       <div class="row" style="margin-top:20px;">
-       <a type="submit" class="btn btn-success btn-lg btn-block" href="manager.php" role="button">
+       <button type="submit" class="btn btn-success">
         Login
-      </a><br><br><br><br>
+      </button>
       </div>
 
     </form>

@@ -14,12 +14,9 @@
 
 <?php
 
- 	session_start();
+ 	// session_start();
 
-
-    // require_once('include/function.php');
-
-    $uid = $_SESSION['uid'];
+    require_once('include/customer_function.php');
 
     $product = trim($_GET["u-name"]);  // get product name 
     $category = trim($_GET["category"]);  // get product name 
@@ -28,30 +25,9 @@
     $max = trim($_GET["p_to"]);  // get product name 
     $order = trim($_GET["order"]);  // get product name 
 
+    search_product($product, $category, $min, $max, $inventory, $order);
 
-    // echo $product;
-    echo '<br />';
-    echo $product;  // get product name 
-    echo '<br />';
-    echo $category;  // get product name 
-    echo '<br />';
-    echo $inventory;  // get product name
-    echo '<br />'; 
-    echo $min;  // get product name 
-    echo '<br />';
-    echo $max;  // get product name 
-    echo '<br />';
-    echo $order;  // get
-    echo '<br />';
-    echo "uid:";
-    echo $uid;  
-
-
-    // echo $sid;
-
-    // search_product_manager($sid, $product);   // check function !
-
-    // echo <br>;
+    echo "<br>";
     echo "<center><a href=\"customer.php\">Customer Search Page</a></center>";
 
 ?>

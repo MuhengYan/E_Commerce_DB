@@ -26,53 +26,12 @@
     $kind = trim($_GET["kind"]); 
     $inventory = trim($_GET["in_name"]); 
     $price = trim($_GET["pro_price"]); 
-    // $mgrname = trim($_GET["   "]);     // get mgr name
 
     echo "<center> <h1>Add successfully! </h1></center>";
     echo "<center><a href=\"manager.php\">Manager Search Page</a></center>";
-    
-    echo "sid:";
-    echo $sid;
-    echo "name:";
-    echo $name;
-    echo "kind:";
-    echo $kind;
-    echo "inventory: ";
-    echo $inventory;
-    echo "price:";
-    echo $price;
-
-    // search_product_manager($sid, $product);
-
-    // $name = "toy";  // get product name 
-
-    // $kind = "electric"; 
-    // $inventory = 100; 
-    // $price = 123; 
-
-
-    // echo "sid:";
-    // echo $sid;
-    // echo "name:";
-    // echo $name;
-    // echo "kind:";
-    // echo $kind;
-    // echo "inventory: ";
-    // echo $inventory;
-    // echo "price:";
-    // echo $price;
-
 
     add_product($sid, $name, $kind, $inventory, $price);
     
-
-
-    // search_product_manager($sid, $product);
-
-    // echo <br>;
-   
-    
-
 ?>
 
 

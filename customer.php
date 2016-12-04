@@ -28,19 +28,9 @@
 
       <?php
           session_start();
-
-          // if(isset($_SESSION['uid'])){
-          //   echo 123;
-          // }
-
-          // echo "hello";
-          
           $uid = $_SESSION['uid'];
-          // echo $uid;
 
           echo "<div style=\"text-align:center\"><p><h3>Welcome  user ". $_SESSION['uid']."!</h3></p></div>";
-
-          // echo $_SESSION['uid'];
         ?>
 
     </div>
@@ -191,7 +181,14 @@
 
 
     <div class="col-md-4">
-      <a type="submit" class="btn btn-default" style="top:980px; left:50px; position:absolute;" role="button" href="main.html">
+      <a type="submit" class="btn btn-default" style="top:10px; left:10px; position:absolute;" role="button" href="log_out.php">
+        Log out
+      </a><br><br>
+
+    </div>
+
+    <div class="col-md-4">
+      <a type="submit" class="btn btn-default" style="top:10px; left:10px; position:absolute;" role="button" href="main.php">
         Back to home
       </a><br><br>
 

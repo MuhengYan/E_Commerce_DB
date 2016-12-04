@@ -21,9 +21,8 @@
 
  	// $uid = $_SESSION['uid'];    
 
-    $name = trim($_GET["delPro"]);  // get product name 
-    $storeid = trim($_GET["delSID"]);  // get product name 
-    $inventory = trim($_GET["delInv"]);  // get product name 
+    $customer = trim($_GET["delCus"]);  // get product name 
+   // get product name 
     // $min = trim($_GET["p_from"]);  // get product name 
     // $max = trim($_GET["p_to"]);  // get product name 
     // $order = trim($_GET["order"]);  // get product name 
@@ -31,13 +30,13 @@
 
     // echo $product;
     // echo '<br />';
-    // echo $name;  // get product name 
+    // echo $customer;  // get product name 
     // echo '<br />';
     // echo $storeid;  // get product name 
     // echo '<br />';
-    // // echo "uid:";
-    // // echo $uid;  
-    // // echo '<br />';
+    // echo "uid:";
+    // echo $uid;  
+    // echo '<br />';
     // echo $inventory;  // get product name
     // echo '<br />'; 
     // echo $min;  // get product name 
@@ -50,10 +49,10 @@
     // echo $sid;
 
     // search_product_manager($sid, $product);   // check function !
-    delete_inventory($name, $storeid, $inventory);
-    
-    echo "<center><h1>Delete successfully!</h1></center>";
+    delete_user($customer);
+
     echo "<br>";
+    echo "<center><h1>Delete successfully!</h1></center>";
     echo "<center><a href=\"admin.php\">Admin Dashboard</a></center>";
 
 ?>

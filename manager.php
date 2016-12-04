@@ -29,20 +29,9 @@
            <?php
           session_start();
 
-          // if(isset($_SESSION['uid'])){
-          //   echo 123;
-          // }
-
-          // echo "hello";
-
           $uid = $_SESSION['sid'];
-          // echo $uid;
-
-
-
+ 
           echo "<div style=\"text-align:center\"><p><h3>Welcome Manager to Store ". $_SESSION['sid']."!</h3></p></div>";
-
-          // echo $_SESSION['uid'];
         ?>
 
 		  </div>
@@ -210,24 +199,20 @@
       <br><br>
 
 
-      <a type="submit" class="btn btn-success" style="top:800px; left:100px; position:absolute;" role="button" href="manager_agg.php">
+      <a type="submit" class="btn btn-success" style="top:700px; left:100px; position:absolute;" role="button" href="manager_agg.php">
         Aggregation page
       </a>
-
-      <a type="submit" class="btn btn-default" style="top:850px; left:100px; position:absolute;" role="button" href="main.php">
+      
+      <a type="submit" class="btn btn-default" style="top:750px; left:100px; position:absolute;" role="button" href="log_out.php">
+        Log out
+      </a>
+      <a type="submit" class="btn btn-default" style="top:800px; left:100px; position:absolute;" role="button" href="main.php">
         Back to home
       </a>
 
 		</div>
-
-
     </div>
-
-
 </div>
-
-
-
 
   <!-- <script type="text/javascript" src="yourPath/jquery-1.10.2.min.js"></script> -->
   <!-- <script type="text/javascript" src="js/bootstrap-select.js"></script> -->

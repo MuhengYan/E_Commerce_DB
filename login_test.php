@@ -35,7 +35,6 @@
         Login
       </h2><br>
 
-
       <form role="form" action="login_check_user.php" method="get" onSubmit="return chkads()" id="lf_addstu" name="lf_addstu">
         <div class="form-group">
 
@@ -73,7 +72,7 @@
 
 
     <div class="col-md-4">
-      <a type="submit" class="btn btn-default" style="top:240px; left:50px; position:absolute;" role="button" href="main.html">
+      <a type="submit" class="btn btn-default" style="top:100px; left:10px; position:absolute;" role="button" href="main.html">
         Back to home
       </a>
 
